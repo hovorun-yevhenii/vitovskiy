@@ -1,0 +1,141 @@
+<template>
+  <div id="app">
+    <app-nav @fadeContent="fadeContent" />
+    <div class="row content" :class="{'faded': isContentFaded}">
+     <transition name="page" :key="$route.path">
+       <router-view />
+     </transition>
+    </div>
+    <external-advice />
+    <app-footer />
+  </div>
+</template>
+
+<script>
+  import AppNav from './components/AppNav'
+  import AppFooter from './components/AppFooter'
+  import ExternalAdvice from './components/ExternalAdvice'
+
+  export default {
+    name: 'app',
+    components: {
+      AppNav,
+      AppFooter,
+      ExternalAdvice
+    },
+    data() {
+      return {
+        isContentFaded: false
+      }
+    },
+    methods: {
+      fadeContent(fade) {
+        this.isContentFaded = fade
+      }
+    }
+  }
+</script>
+
+<style lang="scss">
+  @import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,500,600,800,900|Roboto:300,300i,400,500,700,900&display=swap&subset=cyrillic');
+  html {
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #444;
+    background-color: #f5f5f5;
+    &, & * {
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      box-sizing: border-box;
+      &::selection {
+        background-color: rgba(255,255,0,.5);
+      }
+    }
+  }
+
+  [id='app'] {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .row {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    &.content {
+      flex-grow: 1;
+      padding: 32px 8px;
+      transition: opacity .2s;
+      &.faded {
+        opacity: .5;
+      }
+    }
+  }
+
+  .headline {
+    font-family: Montserrat,sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  .text {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: Roboto,sans-serif;
+  }
+
+  .caption {
+    font-style: italic;
+  }
+
+  @media (max-width: 760px) {
+    .headline {
+      font-size: 20px;
+    }
+    .text {
+      font-size: 14px;
+    }
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: 0.2s;
+    transform: translateY(0);
+  }
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+    transition: 75ms;
+    transform: translateY(-10px);
+  }
+
+  .menu-enter-active,
+  .menu-leave-active {
+    transition: 0.5s;
+    transform: translateY(0);
+  }
+  .menu-enter,
+  .menu-leave-to {
+    opacity: 0;
+    transition: .5s;
+    transform: translateY(-20px);
+  }
+
+  .page-enter-active,
+  .page-leave-active {
+    opacity: 0;
+    transition: 0.3s;
+    transform: translateY(20px);
+  }
+  .page-enter,
+  .page-leave-to {
+    opacity: 0;
+    transition: .3s;
+    transform: translateY(-20px);
+  }
+</style>
