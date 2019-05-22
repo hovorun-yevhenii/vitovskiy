@@ -204,7 +204,7 @@
     position: absolute;
     top: 100%;
     width: 100%;
-    height: calc(100vh - 100%);
+    min-height: calc(100vh - 100%);
     background-color: #36a9e2;
     z-index: 9;
 
@@ -266,7 +266,7 @@
   }
 
   .link {
-    padding: 12px;
+    padding: 8px 12px;
     height: 100%;
     display: flex;
     align-items: center;
