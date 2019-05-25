@@ -2,9 +2,16 @@
   <div class="container">
     <div class="header" :class='{"sticky": !desktop}'>
       <div class="row">
-        <div class="emblem"></div>
+        <div class="emblem">
+          <router-link to="/">
+            <app-image src="https://lh3.google.com/u/2/d/1Ld4exS8QyGD80bKteKeL9mMTtSkRNwbf=w1471-h976-iv1" />
+          </router-link>
+        </div>
+
         <p>Відділ освіти, молоді та спорту Вітовської районної державної адміністрації</p>
-        <div v-if="desktop" class="emblem"></div>
+        <div v-if="desktop" class="emblem">
+          <app-image src="https://lh3.google.com/u/2/d/1Uj86F6pUnRwVSExobl4nTqtGBHQ2xhh5=w1285-h976-iv1" />
+        </div>
 
         <div v-if="!desktop" @click="toggleMenu" class="sandwich-icon" :class='{"active": menuIsOpen}'>
           <span class="top"></span>
@@ -17,7 +24,11 @@
 
     <div v-if="!desktop" class="header spacer">
       <div class="row">
-        <div class="emblem"></div>
+        <div class="emblem">
+          <router-link to="/">
+            <app-image src="https://lh3.google.com/u/2/d/1Ld4exS8QyGD80bKteKeL9mMTtSkRNwbf=w1471-h976-iv1" />
+          </router-link>
+        </div>
         <p>Відділ освіти, молоді та спорту Вітовської районної державної адміністрації</p>
         <div class="burger"></div>
       </div>
@@ -79,6 +90,11 @@
         menuIsOpen: false
       }
     },
+    watch: {
+      $route() {
+        this.mouseleave()
+      }
+    },
     created() {
       ["orientationchange", "resize"].forEach(e => {
         window.addEventListener(e, this.sizeHandler);
@@ -118,7 +134,7 @@
 
   .header {
     position: relative;
-    background-color: #36a9e2;
+    background: linear-gradient(-2deg, #f5d847, #36a9e2 35%);
     padding: 8px 0;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
     z-index: 8;
@@ -134,9 +150,12 @@
       top: 0;
       right: 0;
       left: 0;
+      padding-left: 8px;
+      background: #36a9e2;
     }
 
     .row {
+      max-width: 1200px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -145,9 +164,10 @@
     p {
       padding: 0 16px;
       text-transform: uppercase;
-      max-width: 520px;
+      max-width: 960px;
+
       color: #eee;
-      font-size: 18px;
+      font-size: 26px;
       font-weight: bold;
       line-height: 1.5;
     }
@@ -156,13 +176,29 @@
       width: 100px;
       height: 100px;
       flex-shrink: 0;
-      background: transparent url(../assets/emlem-local.png) center/130% no-repeat;
       -webkit-filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.4)) saturate(0.75);
       filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.4)) saturate(0.75);
+      overflow: hidden;
+      a {
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+      img {
+        position: relative;
+        left: -15px;
+        max-width: 155%;
+        height: 99%;
+      }
     }
 
     .emblem ~ .emblem {
-      background: transparent url(../assets/emlem-ukraine.png) center/70% 87% no-repeat;
+      img {
+        top: 7px;
+        left: 15px;
+        width: 72%;
+        height: 87%;
+      }
     }
   }
 
@@ -259,6 +295,12 @@
     display: flex;
     flex-wrap: wrap;
     z-index: 1;
+    opacity: .5;
+    transition: opacity .2s;
+
+    &:hover {
+      opacity: 1;
+    }
 
     & > * {
       flex: 0 1 24%;
@@ -296,6 +338,7 @@
 
   .drop {
     position: absolute;
+    padding: 16px 0;
     background-color: #f5f5f5;
 
     .link {

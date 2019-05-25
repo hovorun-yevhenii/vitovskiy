@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div>
+  <div class="home">
+    <div class="greeting">
       <div class="headline">Раді Вас вітати на офіційному сайті відділу освіти, молоді та спорту Вітовської районної
         державної адміністрації!
       </div>
@@ -11,21 +11,27 @@
         та
         педагогічних працівників Вітовщини. Ми завжди готові до співпраці та спілкування!
       </div>
-      <div class="text caption">З повагою начальник відділу освіти <span class="graph">Р. КРАЙНІК</span></div>
+      <div class="text caption">З повагою, начальник відділу освіти <span class="graph">Р. КРАЙНІК</span></div>
     </div>
+    <external-advice/>
   </div>
 </template>
 
 <script>
+  import ExternalAdvice from '../components/ExternalAdvice'
+
   export default {
-    name: "home"
+    name: "home",
+    components: {
+      ExternalAdvice
+    }
   }
 </script>
 
 <style scoped lang="scss">
-.headline {
-  margin: 0 auto 24px;
-}
+  .greeting {
+    margin-bottom: 128px;
+  }
 
   .text {
     text-indent: 32px;

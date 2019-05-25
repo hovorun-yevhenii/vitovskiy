@@ -1,9 +1,17 @@
 <template>
-  <div class="advice">
-    <div class="link" v-for="link in links">
-      <a :href="link.href" :style="'background-image: src(../assets/' + link.img + '.png)'"></a>
+<div>
+  <div class="headline">Радимо відвідати</div>
+  <div class="cards">
+    <div v-for="link in links" class="card">
+      <a :href="link.href" target="_blank">
+        <div class="image">
+          <app-image :src="link.img" :alt="link.title" />
+        </div>
+        <p>{{link.title}}</p>
+      </a>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -11,44 +19,55 @@
     name: "ExternalAdvice",
     data() {
       return {
-        links: [
-          {
-            href: 'http://oblosvita.mk.gov.ua/ua/home/',
-            img: 'деп_осв_наук_мик_ода'
-          },
-          {
-            href: 'http://vitovska.mk.gov.ua/ua/home/',
-            img: 'віт_рай_рада_віт_рда'
-          },
-          {
-            href: 'http://www.moippo.mk.ua/',
-            img: 'моіппо'
-          },
-          {
-            href: 'http://nus.org.ua/',
-            img: 'нуш'
-          },
-          {
-            href: 'http://khersontest.org.ua/',
-            img: 'херсон'
-          },
-          {
-            href: 'https://mon.gov.ua/ua',
-            img: 'мін_осв'
-          }
-        ]
+        links: []
       }
+    },
+    created() {
+      this.$fetch('adviseToVisit')
+        .then(links => Object.assign(this.$data, { links }))
     }
   }
 </script>
 
 <style scoped lang="scss">
-.advice {
-  display: flex;
-}
-  .link {
-    display: block;
-    width: 100px;
-    height: 100px;
+  .cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 16px;
+    font-weight: 300;
+    font-size: 12px;
+  }
+
+  .card {
+    width: 141px;
+    margin: 8px;
+    line-height: 1.3;
+    text-align: center;
+    cursor: pointer;
+    transition: .2s;
+    &:hover {
+      color: #111;
+      img {
+        -webkit-filter: drop-shadow(1px 1px 3px rgba(0,0,0,.3));
+                filter: drop-shadow(1px 1px 3px rgba(0,0,0,.3));
+      }
+    }
+
+    .image {
+      margin-bottom: 16px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    a {
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      transition: .2s;
+    }
   }
 </style>

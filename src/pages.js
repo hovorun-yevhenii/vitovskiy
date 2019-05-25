@@ -53,12 +53,12 @@ export default [
       {
         path: '/pre-school',
         name: 'preSchool',
-        title: 'Заклади дошкільної освіти'
+        title: 'Дошкільна освіта'
       },
       {
         path: '/secondary-school',
         name: 'secondarySchool',
-        title: 'Заклади загальної середньої освіти'
+        title: 'Загальна середня освіта'
       },
     ]
   },

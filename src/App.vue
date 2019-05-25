@@ -6,7 +6,6 @@
        <router-view />
      </transition>
     </div>
-    <external-advice />
     <app-footer />
   </div>
 </template>
@@ -14,14 +13,12 @@
 <script>
   import AppNav from './components/AppNav'
   import AppFooter from './components/AppFooter'
-  import ExternalAdvice from './components/ExternalAdvice'
 
   export default {
     name: 'app',
     components: {
       AppNav,
-      AppFooter,
-      ExternalAdvice
+      AppFooter
     },
     data() {
       return {
@@ -37,7 +34,7 @@
 </script>
 
 <style lang="scss">
-  @import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,500,600,800,900|Roboto:300,300i,400,500,700,900&display=swap&subset=cyrillic');
+  @import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,500,600,800,900|Roboto:100,300,300i,400,500,700,900&display=swap&subset=cyrillic');
   html {
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -76,10 +73,13 @@
   }
 
   .headline {
+    max-width: 600px;
+    margin: 0 auto 24px;
     font-family: Montserrat,sans-serif;
     font-weight: 700;
     font-size: 24px;
     line-height: 1.5;
+    text-align: center;
   }
 
   .text {
@@ -137,5 +137,11 @@
     opacity: 0;
     transition: .3s;
     transform: translateY(-20px);
+  }
+  .image-enter,
+  .image-leave-to {
+    opacity: 0;
+    transition: .3s;
+    transform: translateY(-5px);
   }
 </style>
