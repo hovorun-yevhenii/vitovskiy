@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <app-nav @fadeContent="fadeContent" />
-    <div class="row content" :class="{'faded': isContentFaded}">
+    <app-nav @fadeContent="fadeContent" @toggleMobileMenu="toggleMobileMenu"/>
+    <div class="row content" :class="{'faded': isContentFaded, 'hidden': isMobileMenuOpen}">
      <transition name="page" :key="$route.path">
        <router-view />
      </transition>
@@ -22,12 +22,16 @@
     },
     data() {
       return {
-        isContentFaded: false
+        isContentFaded: false,
+        isMobileMenuOpen: false
       }
     },
     methods: {
       fadeContent(fade) {
         this.isContentFaded = fade
+      },
+      toggleMobileMenu(open) {
+        this.isMobileMenuOpen = open
       }
     }
   }
@@ -68,6 +72,9 @@
       transition: opacity .2s;
       &.faded {
         opacity: .5;
+      }
+      &.hidden {
+        display: none;
       }
     }
   }

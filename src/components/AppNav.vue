@@ -122,6 +122,7 @@
       },
       toggleMenu() {
         this.menuIsOpen = !this.menuIsOpen;
+        this.$emit('toggleMobileMenu', this.menuIsOpen)
       }
     }
   }
@@ -134,7 +135,7 @@
 
   .header {
     position: relative;
-    background: linear-gradient(-2deg, #f5d847, #36a9e2 35%);
+    background: linear-gradient(-2deg, #eecd2b, #36a9e2 35%);
     padding: 8px 0;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
     z-index: 8;
@@ -150,7 +151,7 @@
       top: 0;
       right: 0;
       left: 0;
-      padding-left: 8px;
+      padding-left: 16px;
       background: #36a9e2;
     }
 
@@ -164,7 +165,7 @@
     p {
       padding: 0 16px;
       text-transform: uppercase;
-      max-width: 960px;
+      max-width: 900px;
 
       color: #eee;
       font-size: 26px;
@@ -279,7 +280,7 @@
       }
 
       &:hover:after {
-        background: linear-gradient(90deg, transparent, #f5d847 10%, transparent);
+        background: linear-gradient(90deg, transparent, #eecd2b 10%, transparent);
       }
     }
 
@@ -295,12 +296,6 @@
     display: flex;
     flex-wrap: wrap;
     z-index: 1;
-    opacity: .5;
-    transition: opacity .2s;
-
-    &:hover {
-      opacity: 1;
-    }
 
     & > * {
       flex: 0 1 24%;

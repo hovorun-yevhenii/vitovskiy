@@ -1,6 +1,7 @@
 const baseUrl = "https://spreadsheets.google.com/feeds/cells/";
 const tables = {
-  adviseToVisit: '1XmLRvWSZAZmJGrzOSlQGW8_VXhX_M57ASdT8YDCNt1o'
+  adviseToVisit: '1XmLRvWSZAZmJGrzOSlQGW8_VXhX_M57ASdT8YDCNt1o',
+  publicInfo: '110nSzv4nJgmCe6QfL1LzW-1kVn5Ok54H5q-_eW4Ls58'
 };
 
 export default function (entity, page = 1) {
