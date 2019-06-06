@@ -1,15 +1,63 @@
 <template>
-    <div>
-      news
+    <div class="news">
+        <div class="item" v-for="(item, index) in news" :class="{'item--odd': index % 2}">
+            <div class="heading">
+                <div class="headline">{{item.title}}</div>
+                <div class="caption">{{item.caption}}</div>
+            </div>
+            <app-image class="image" :src="item.img" :alt="item.title" />
+            <div class="text" v-html="item.text"></div>
+
+            <div class="caption">{{item.author}} - {{item.date}}</div>
+        </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "news"
+        name: "news",
+        data() {
+            return {
+                news: []
+            }
+        },
+        created() {
+            this.$fetch('news').then(news => Object.assign(this.$data, {news}))
+        }
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    .news {
+        .item + .item {
+            margin-top: 128px;
+        }
 
+        .heading {
+            margin-bottom: 32px;
+            .caption {
+                text-align: center;
+            }
+        }
+
+        .text {
+            text-indent: 16px;
+            margin-bottom: 32px;
+        }
+
+        .image {
+            max-width: 320px;
+            float: left;
+            margin: 0 16px 16px 0;
+        }
+
+        .item--odd {
+            .image {
+                float: right;
+                margin: 0 0 16px 16px;
+            }
+        }
+
+
+    }
 </style>
