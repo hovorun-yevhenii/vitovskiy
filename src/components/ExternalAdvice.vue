@@ -15,8 +15,11 @@
 </template>
 
 <script>
+  import fetchAndLoad from '../mixins/fetchAndLoad';
+
   export default {
     name: "ExternalAdvice",
+    mixins: [fetchAndLoad],
     data() {
       return {
         links: []
@@ -63,11 +66,6 @@
     }
     a {
       color: inherit;
-    }
-    img {
-      max-width: 100%;
-      max-height: 100%;
-      transition: .2s;
     }
   }
 </style>

@@ -9,8 +9,11 @@
 </template>
 
 <script>
+  import fetchAndLoad from '../mixins/fetchAndLoad';
+
   export default {
     name: "public",
+    mixins: [fetchAndLoad],
     data() {
       return {
         docs: []

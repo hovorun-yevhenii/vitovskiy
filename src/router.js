@@ -4,7 +4,10 @@ import pages from './pages'
 
 import home from './pages/home'
 import news from './pages/news'
-import structure from './pages/structure'
+
+import kuVmk from './pages/sctructure/kuVmk'
+import kuIrc from './pages/sctructure/kuIrc'
+import kuVrc from './pages/sctructure/kuVrc'
 
 import preSchool from './pages/institutions/preSchool'
 import secondarySchool from './pages/institutions/secondarySchool'
@@ -24,7 +27,9 @@ const routes = [];
 const components = {
   home,
   news,
-  structure,
+  kuVmk,
+  kuIrc,
+  kuVrc,
   preSchool,
   secondarySchool,
   announce,

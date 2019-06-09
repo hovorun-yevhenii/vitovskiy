@@ -59,7 +59,7 @@
   [id='app'] {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 101vh;
   }
 
   .row {
@@ -87,6 +87,9 @@
     font-size: 24px;
     line-height: 1.5;
     text-align: center;
+    &.small {
+      font-size: 20px;
+    }
   }
 
   .text {
@@ -146,9 +149,9 @@
     transform: translateY(-20px);
   }
   .image-enter,
-  .image-leave-to {
+  .page-enter-active {
     opacity: 0;
     transition: .3s;
-    transform: translateY(-5px);
+    transform: scale(.7);
   }
 </style>
