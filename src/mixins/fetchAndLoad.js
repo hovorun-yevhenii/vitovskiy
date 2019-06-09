@@ -8,7 +8,11 @@ export default {
         adviseToVisit: '1XmLRvWSZAZmJGrzOSlQGW8_VXhX_M57ASdT8YDCNt1o',
         publicInfo: '110nSzv4nJgmCe6QfL1LzW-1kVn5Ok54H5q-_eW4Ls58',
         news: '10afZFT-ydBJJU4GNh3bUxbHwZFEh2jc-VrjyVJ3ftO4',
-        structureVMK: '1LclbO2NmahlMvAD0pgKShG9vxhz877XdyFVRo6VCa8E'
+        structureDepartment: '1GRNj91k7rO7tJmhda5Jzgmi-yMAcGUrRR8UbaYS_hYA',
+        structureVMK: '1LclbO2NmahlMvAD0pgKShG9vxhz877XdyFVRo6VCa8E',
+        structureIRC: '1XuFKApMB8KqtLnjNRpb66SPKBlnjSd9_ddTtvgr04kY',
+        structureVRC: '13DG0VF_QSJOyprneTaFaYWn2GQd8hrovFKK00TlaeD8',
+        preSchool: '1BVC5LCgKKcK9bCgJhFV0pifp0G7WW1Z7c2z-vcg4LZs'
       }
     }
   },

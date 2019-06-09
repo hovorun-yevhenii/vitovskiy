@@ -3,51 +3,28 @@
     <div class="headline">
       Комунальна установа "Вітовський методичний кабінет"
     </div>
-    <div class="employee" v-for="employee in employees" :key="employee.order">
-      <app-image class="photo" :src="employee.photo" :aly="employee.name"/>
-      <div class="name">
-        <div class="headline small">{{employee.name}}</div>
-        <div class="text">{{employee.position}}</div>
-      </div>
-    </div>
+    <app-person v-for="person in persons" :person="person" :key="person.order"/>
   </div>
 </template>
 
 <script>
   import fetchAndLoad from '../../mixins/fetchAndLoad';
+  import AppPerson from '../../components/AppPerson';
 
   export default {
-    name: "ku-vmk",
+    name: "kuVmk",
     mixins: [fetchAndLoad],
+    components: {AppPerson},
     data() {
       return {
-        employees: []
+        persons: []
       }
     },
     created() {
-      this.$fetch('structureVMK').then(employees => Object.assign(this.$data, {employees}))
+      this.$fetch('structureVMK').then(persons => Object.assign(this.$data, {persons}))
     }
   }
 </script>
 
 <style lang="scss" scoped>
-  .employee {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    min-height: 312px;
-    margin: 64px 0;
-
-    .photo {
-      width: 280px;
-      margin: 0 32px 32px 0;
-      border-radius: 16px 64px;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-    }
-
-    .headline.small {
-      text-align: left;
-    }
-  }
 </style>

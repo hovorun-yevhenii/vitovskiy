@@ -5,6 +5,7 @@ import pages from './pages'
 import home from './pages/home'
 import news from './pages/news'
 
+import department from './pages/sctructure/department'
 import kuVmk from './pages/sctructure/kuVmk'
 import kuIrc from './pages/sctructure/kuIrc'
 import kuVrc from './pages/sctructure/kuVrc'
@@ -27,6 +28,7 @@ const routes = [];
 const components = {
   home,
   news,
+  department,
   kuVmk,
   kuIrc,
   kuVrc,

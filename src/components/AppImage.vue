@@ -1,6 +1,7 @@
 <template>
   <transition name="image">
     <img v-show="loaded"
+         :class="{'styled': styled}"
          :src="src"
          @error="errorHandler"
          :alt="alt"
@@ -17,7 +18,7 @@
         loaded: false
       }
     },
-    props: ['src', 'alt'],
+    props: ['src', 'alt', 'styled'],
     methods: {
       loadHandler() {
         this.loaded = true
@@ -34,5 +35,9 @@
     max-width: 100%;
     max-height: 100%;
     transition: .2s;
+  }
+  .styled {
+    border-radius: 64px 16px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
   }
 </style>

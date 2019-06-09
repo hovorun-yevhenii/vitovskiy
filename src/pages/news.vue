@@ -3,14 +3,14 @@
     <div class="item" v-for="(item, index) in news" :class="{'item--odd': index % 2}">
       <div class="heading">
         <div class="headline">{{item.title}}</div>
-        <div class="caption">{{item.caption}}</div>
+        <div class="caption" v-if="item.caption !== '-'">{{item.caption}}</div>
       </div>
       <div v-if="item.img" class="image">
-        <app-image :src="item.img" :alt="item.title"/>
+        <app-image :src="item.img" :alt="item.title" :styled="true"/>
       </div>
       <div class="text" v-html="item.text"></div>
 
-      <div class="caption">{{item.author}} - {{item.date}}</div>
+      <div class="caption"><span v-if="item.author !== '-'">{{item.author}} -</span> {{item.date}}</div>
     </div>
   </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="headline">
-      Комунальна установа "Інклюзивно-ресурсний центр"
+      Відділ освіти, молоді та спорту Вітовської районної державної адміністрації
     </div>
     <app-person v-for="person in persons" :person="person" :key="person.order"/>
   </div>
@@ -12,7 +12,7 @@
   import AppPerson from '../../components/AppPerson';
 
   export default {
-    name: "kuIrc",
+    name: "department",
     mixins: [fetchAndLoad],
     components: {AppPerson},
     data() {
@@ -21,10 +21,11 @@
       }
     },
     created() {
-      this.$fetch('structureIRC').then(persons => Object.assign(this.$data, {persons}))
+      this.$fetch('structureDepartment').then(persons => Object.assign(this.$data, {persons}))
     }
   }
 </script>
 
 <style lang="scss" scoped>
+
 </style>
