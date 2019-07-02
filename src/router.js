@@ -12,6 +12,7 @@ import kuVrc from './pages/sctructure/kuVrc'
 
 import preSchool from './pages/institutions/preSchool'
 import secondarySchool from './pages/institutions/secondarySchool'
+import ircPage from './pages/institutions/ircPage'
 
 import announce from './pages/announce'
 import transparency from './pages/transparency'
@@ -34,6 +35,7 @@ const components = {
   kuVrc,
   preSchool,
   secondarySchool,
+  ircPage,
   announce,
   transparency,
   regulatory,

@@ -12,7 +12,8 @@ export default {
         structureVMK: '1LclbO2NmahlMvAD0pgKShG9vxhz877XdyFVRo6VCa8E',
         structureIRC: '1XuFKApMB8KqtLnjNRpb66SPKBlnjSd9_ddTtvgr04kY',
         structureVRC: '13DG0VF_QSJOyprneTaFaYWn2GQd8hrovFKK00TlaeD8',
-        preSchool: '1BVC5LCgKKcK9bCgJhFV0pifp0G7WW1Z7c2z-vcg4LZs'
+        preSchool: '1BVC5LCgKKcK9bCgJhFV0pifp0G7WW1Z7c2z-vcg4LZs',
+        ircImages: '102gitzjPHFUYXRPQhL6oObRn46rEtDMQEaUBHHkZmgc'
       }
     }
   },

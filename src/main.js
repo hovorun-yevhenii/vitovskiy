@@ -6,7 +6,6 @@ import AppLoader from './components/AppLoader'
 
 Vue.component('app-image', AppImage);
 Vue.component('app-loader', AppLoader);
-Vue.use(router);
 
 new Vue({
   el: '#app',
