@@ -80,15 +80,15 @@
     min-height: 101vh;
     .icon {
       content: '';
-      position: absolute;
-      opacity: .05;
+      position: fixed;
+      opacity: .03;
       top: 0;
       bottom: 0;
       right: 0;
       left: 0;
       z-index: -1;
       pointer-events: none;
-      background: var(--icon) 105% 90%/45vmax no-repeat;
+      background: var(--icon) 105% 90%/40vmax no-repeat;
     }
   }
 
