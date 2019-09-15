@@ -12,6 +12,7 @@ export default {
         structureVMK: '1LclbO2NmahlMvAD0pgKShG9vxhz877XdyFVRo6VCa8E',
         structureIRC: '1XuFKApMB8KqtLnjNRpb66SPKBlnjSd9_ddTtvgr04kY',
         structureVRC: '13DG0VF_QSJOyprneTaFaYWn2GQd8hrovFKK00TlaeD8',
+        structureCpo: '1furxdRr6y8q1IVhKecTTeu_6FmfwCv8-1-c4Vk8InvM',
         preSchool: '1BVC5LCgKKcK9bCgJhFV0pifp0G7WW1Z7c2z-vcg4LZs',
         preSchoolDocs: '1RKPJP7hLZFaB0Y4W-84LI_bQLAmYtU6AgSjgNd0KJ1g',
         secondarySchool: '1tb93SDT2i6d1HIkk0vOmawbwWaztKJpnfOhr4ZYSD_0',

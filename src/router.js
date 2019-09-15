@@ -9,6 +9,7 @@ import department from './pages/sctructure/department'
 import kuVmk from './pages/sctructure/kuVmk'
 import kuIrc from './pages/sctructure/kuIrc'
 import kuVrc from './pages/sctructure/kuVrc'
+import cpo from './pages/sctructure/cpo'
 
 import preSchool from './pages/institutions/preSchool'
 import secondarySchool from './pages/institutions/secondarySchool'
@@ -33,6 +34,7 @@ const components = {
   kuVmk,
   kuIrc,
   kuVrc,
+  cpo,
   preSchool,
   secondarySchool,
   ircPage,

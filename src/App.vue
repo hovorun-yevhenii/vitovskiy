@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <div class="icon" :key="$route.path"></div>
     <app-nav @fadeContent="fadeContent" @toggleMobileMenu="toggleMobileMenu"/>
     <div class="row content" :class="{'faded': isContentFaded, 'hidden': isMobileMenuOpen}">
      <transition name="page" :key="$route.path">
@@ -23,7 +24,22 @@
     data() {
       return {
         isContentFaded: false,
-        isMobileMenuOpen: false
+        isMobileMenuOpen: false,
+          icons : [
+              'url(https://image.flaticon.com/icons/svg/864/864102.svg)',
+              'url(https://image.flaticon.com/icons/svg/43/43007.svg)',
+              'url(https://image.flaticon.com/icons/svg/243/243278.svg)',
+              'url(https://image.flaticon.com/icons/svg/1651/1651689.svg)',
+              'url(https://image.flaticon.com/icons/svg/2056/2056632.svg)',
+              'url(https://image.flaticon.com/icons/svg/2081/2081509.svg)',
+          ]
+      }
+    },
+    watch: {
+      $route() {
+          const index = Math.round(Math.random() * 5);
+
+          document.documentElement.style.setProperty('--icon', this.icons[index]);
       }
     },
     methods: {
@@ -45,6 +61,8 @@
     -moz-osx-font-smoothing: grayscale;
     color: #444;
     background-color: #f5f5f5;
+    --icon: url(https://image.flaticon.com/icons/svg/864/864102.svg);
+
     &, & * {
       margin: 0;
       padding: 0;
@@ -60,6 +78,18 @@
     display: flex;
     flex-direction: column;
     min-height: 101vh;
+    .icon {
+      content: '';
+      position: absolute;
+      opacity: .05;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: -1;
+      pointer-events: none;
+      background: var(--icon) 105% 90%/45vmax no-repeat;
+    }
   }
 
   .row {
