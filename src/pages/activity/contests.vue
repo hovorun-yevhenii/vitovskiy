@@ -1,15 +1,14 @@
 <template>
-    <div>
-      contests
-    </div>
+  <div>
+    <EmptyPage/>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "contests"
-    }
+  import EmptyPage from '../../components/EmptyPage'
+
+  export default {
+    name: "contests",
+    components: {EmptyPage}
+  }
 </script>
-
-<style scoped>
-
-</style>

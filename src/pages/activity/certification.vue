@@ -1,15 +1,14 @@
 <template>
-    <div>
-      certification
-    </div>
+  <div>
+    <EmptyPage/>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "certification"
-    }
+  import EmptyPage from '../../components/EmptyPage'
+
+  export default {
+    name: "certification",
+    components: {EmptyPage}
+  }
 </script>
-
-<style scoped>
-
-</style>

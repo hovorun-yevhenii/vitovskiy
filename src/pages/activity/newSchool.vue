@@ -1,15 +1,14 @@
 <template>
-    <div>
-      newSchool
-    </div>
+  <div>
+    <EmptyPage/>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "newSchool"
-    }
+  import EmptyPage from '../../components/EmptyPage'
+
+  export default {
+    name: "newSchool",
+    components: {EmptyPage}
+  }
 </script>
-
-<style scoped>
-
-</style>

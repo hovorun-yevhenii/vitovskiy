@@ -1,15 +1,14 @@
 <template>
-    <div>
-      externally
-    </div>
+  <div>
+    <EmptyPage/>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "externally"
-    }
+  import EmptyPage from '../../components/EmptyPage'
+
+  export default {
+    name: "externally",
+    components: {EmptyPage}
+  }
 </script>
-
-<style scoped>
-
-</style>

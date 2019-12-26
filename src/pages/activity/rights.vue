@@ -1,15 +1,14 @@
 <template>
-    <div>
-      rights
-    </div>
+  <div>
+    <EmptyPage/>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "rights"
-    }
+  import EmptyPage from '../../components/EmptyPage'
+
+  export default {
+    name: "rights",
+    components: {EmptyPage}
+  }
 </script>
-
-<style scoped>
-
-</style>
