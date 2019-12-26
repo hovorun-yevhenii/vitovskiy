@@ -17,7 +17,8 @@ export default {
         preSchoolDocs: '1RKPJP7hLZFaB0Y4W-84LI_bQLAmYtU6AgSjgNd0KJ1g',
         secondarySchool: '1tb93SDT2i6d1HIkk0vOmawbwWaztKJpnfOhr4ZYSD_0',
         ircImages: '102gitzjPHFUYXRPQhL6oObRn46rEtDMQEaUBHHkZmgc',
-        regulatory: '1rWvyV3EmosIeTWjxG2Ls3278yYq9fUUwNtq6fY7Szjc'
+        regulatory: '1rWvyV3EmosIeTWjxG2Ls3278yYq9fUUwNtq6fY7Szjc',
+        man: '1Puhzld_RRlfVTRuK2DK1bc89snQS9_boQCTK6WXeFs8'
       }
     }
   },
